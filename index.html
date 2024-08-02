@@ -24,7 +24,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
             const modelName = urlParams.get('model') || 'Scaniverse_2024-07-15_170330.glb'; // 'defaultModel' замените на имя модели по умолчанию
-            const modelPath = `./models/${modelName}.glb`;
+            const modelPath = `./models/${modelName}`;
 
             const modelEntity = document.getElementById('model');
             const loader = new THREE.GLTFLoader();
