@@ -36,7 +36,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
-            const modelName = urlParams.get('model') || 'Scaniverse_2024-07-15_170330'; // 'defaultModel' замените на имя модели по умолчанию
+            const modelName = urlParams.get('model') || 'Scaniverse_2024-07-15_170330.glb'; // 'defaultModel' замените на имя модели по умолчанию
             const modelPath = `./models/${modelName}.glb`;
 
             const modelEntity = document.getElementById('model');
