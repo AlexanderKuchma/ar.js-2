@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebAR</title>
-    <!-- Подключаем более новую версию A-Frame и AR.js -->
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js@3.4.5/aframe/build/aframe-ar.js"></script>
     <style>
@@ -15,33 +14,22 @@
 <body>
     <a-scene embedded arjs>
         <a-assets>
-            <!-- Убедитесь, что путь к модели корректен -->
-            <a-asset-item id="model-asset" src=""></a-asset-item>
+            <a-asset-item id="model-asset" src="models/Scaniverse_2024-07-15_170330.glb"></a-asset-item>
         </a-assets>
-        <!-- Используем кастомный маркер -->
-        <a-marker type='pattern' url='patterns/pattern-Pattern-hiro.patt'>
-            <a-entity id="model" gltf-model="#model-asset" scale="0.5 0.5 0.5" rotation="0 180 0"></a-entity>
+        <!-- Используйте ваш паттерн маркера -->
+        <a-marker type='pattern' url='patterns/your-pattern-marker.patt'>
+            <!-- Отрегулируйте позицию модели, чтобы она была на плоскости маркера -->
+            <a-entity id="model" gltf-model="#model-asset" 
+                      scale="0.5 0.5 0.5" 
+                      position="0 0 0" 
+                      rotation="0 0 0"></a-entity>
         </a-marker>
-        <!-- Обеспечиваем освещение сцены -->
+        <!-- Освещение сцены -->
         <a-entity light="type: ambient; intensity: 0.5"></a-entity>
         <a-entity light="type: directional; intensity: 0.8" position="1 1 1"></a-entity>
         <!-- Камера сцены -->
         <a-entity camera></a-entity>
     </a-scene>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const modelName = urlParams.get('model') || 'Scaniverse_2024-07-15_170330.glb'; // Имя модели по умолчанию
-            const modelScale = urlParams.get('scale') || '1 1 1'; // Масштаб модели по умолчанию
-
-            const modelAsset = document.getElementById('model-asset');
-            modelAsset.setAttribute('src', `models/${modelName}`);
-
-            const modelEntity = document.getElementById('model');
-            modelEntity.setAttribute('scale', modelScale);
-        });
-    </script>
 </body>
 </html>
 
