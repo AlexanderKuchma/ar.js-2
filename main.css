@@ -1,6 +1,4 @@
 /* main.css */
-
-/* Устанавливаем базовые стили для body */
 body {
     margin: 0;
     overflow: hidden;
@@ -8,28 +6,8 @@ body {
     background-color: #000; /* Черный фон для лучшей видимости AR сцены */
 }
 
-/* Устанавливаем стили для A-Frame сцены */
 a-scene {
     position: absolute;
     width: 100%;
     height: 100%;
-}
-
-/* Стили для контролов */
-#controls {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: 10;
-    background: rgba(255, 255, 255, 0.8);
-    padding: 10px;
-    border-radius: 5px;
-}
-
-#controls label {
-    font-size: 14px;
-}
-
-#controls input[type="range"] {
-    width: 100px;
 }
